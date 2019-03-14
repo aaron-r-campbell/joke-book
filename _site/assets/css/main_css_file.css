@@ -18,7 +18,7 @@ html, body {
   text-align: center; }
 
 #joke-title {
-  font-family: Domaine Display;
+  font-family: 'Domaine Display';
   font-weight: bold;
   font-size: 48px;
   color: #F8FAFF;
@@ -26,7 +26,7 @@ html, body {
   margin: 50px auto 0; }
 
 #joke-text {
-  font-family: National;
+  font-family: 'National';
   font-size: 20px;
   white-space: pre-wrap;
   color: #F8FAFF;
@@ -40,3 +40,14 @@ html, body {
   padding: 50px 100px; }
   #new-joke:hover {
     cursor: pointer; }
+
+@font-face {
+  font-family: 'Domaine Display';
+  src: url("/assets/fonts/DomaineDisplay-Semibold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'National';
+  src: url("/assets/fonts/National-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
