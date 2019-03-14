@@ -1,3 +1,4 @@
+const sheety_link = "https://api.sheety.co/1c501100-a527-4093-b074-fa9a042d26f9";
 var jokes;
 var scroll = new SmoothScroll('a[href*="#"]');
 
@@ -10,7 +11,7 @@ function getRandomJoke(joke) {
 }
 
 jQuery(window).on("load", function(){
-    $.getJSON('https://api.sheety.co/ea92d66f-0056-4607-88b1-33fdd65f4e0d', function(data) {
+    $.getJSON(sheety_link, function(data) {
 		jokes = data;
 		getRandomJoke()
 		$('.initially-hidden').css({
