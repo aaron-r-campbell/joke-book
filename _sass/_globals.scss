@@ -30,9 +30,9 @@ html, body {
 
 #joke-text {
 	white-space: pre-wrap;
-	/*width: 80%;*/
+	width: 80%;
 	@media (min-width: $md) {
-		width: 50%;
+		width: 60%;
 	}
 }
 

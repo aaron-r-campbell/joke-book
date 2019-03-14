@@ -31,10 +31,10 @@ html, body {
 
 #joke-text {
   white-space: pre-wrap;
-  /*width: 80%;*/ }
+  width: 80%; }
   @media (min-width: 768px) {
     #joke-text {
-      width: 50%; } }
+      width: 60%; } }
 
 #new-joke {
   padding: 50px 100px; }
