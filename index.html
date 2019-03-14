@@ -1,10 +1,13 @@
 ---
 layout: default
 ---
+
 <div class="content">
 	<div id="joke-container">
-		<p id="joke-title"></p>
+		<h1 id="joke-title"></h1>
 		<p id="joke-text"></p>
 	</div>
-	<a id="new-joke">{% include reload.html %}</a>
+	<a id="new-joke" class="initially-hidden">{% include reload.html %}</a>
 </div>
+
+<p class="initially-hidden" id="about">Jokes assembled by <a href="http://aaron.keydesign.com/" target="_">Aaron Campbell</a>.</p>

@@ -13,10 +13,12 @@ jQuery(window).on("load", function(){
     $.getJSON('https://api.sheety.co/ea92d66f-0056-4607-88b1-33fdd65f4e0d', function(data) {
 		jokes = data;
 		getRandomJoke()
+		$('.initially-hidden').css({
+	        opacity: 1,
+	    })
 	})
 });
 
 $('#new-joke').on("click",function(){
-	console.log('a clicked')
-  getRandomJoke()
+	getRandomJoke()
 })

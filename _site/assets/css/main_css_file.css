@@ -8,30 +8,30 @@ html, body {
 * {
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
 
+#joke-container {
+  -webkit-transition: all 0.25s;
+  /* Safari and Chrome */
+  -moz-transition: all 0.25s;
+  /* Firefox */
+  -ms-transition: all 0.25s;
+  /* IE 9 */
+  -o-transition: all 0.25s;
+  /* Opera */
+  transition: all 0.25s; }
+
 .content {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column; }
 
-#joke-container {
-  text-align: center; }
-
 #joke-title {
-  font-family: 'Domaine Display';
-  font-weight: bold;
-  font-size: 48px;
-  color: #F8FAFF;
   width: 80%;
   margin: 50px auto 0; }
 
 #joke-text {
-  font-family: 'National';
-  font-size: 20px;
   white-space: pre-wrap;
-  color: #F8FAFF;
-  margin: 30px auto;
-  width: 80%; }
+  /*width: 80%;*/ }
   @media (min-width: 768px) {
     #joke-text {
       width: 50%; } }
@@ -40,6 +40,21 @@ html, body {
   padding: 50px 100px; }
   #new-joke:hover {
     cursor: pointer; }
+
+.initially-hidden {
+  -webkit-transition: all 0.25s;
+  /* Safari and Chrome */
+  -moz-transition: all 0.25s;
+  /* Firefox */
+  -ms-transition: all 0.25s;
+  /* IE 9 */
+  -o-transition: all 0.25s;
+  /* Opera */
+  transition: all 0.25s;
+  opacity: 0; }
+
+#about {
+  font-size: 14px; }
 
 @font-face {
   font-family: 'Domaine Display';
@@ -51,3 +66,34 @@ html, body {
   src: url("/assets/fonts/National-Book.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+h1 {
+  font-family: 'Domaine Display';
+  font-weight: bold;
+  font-size: 48px;
+  color: #F8FAFF;
+  text-align: center; }
+
+p {
+  font-family: 'National';
+  font-size: 20px;
+  margin: 30px auto;
+  color: #F8FAFF;
+  text-align: center; }
+
+a {
+  -webkit-transition: all 0.25s;
+  /* Safari and Chrome */
+  -moz-transition: all 0.25s;
+  /* Firefox */
+  -ms-transition: all 0.25s;
+  /* IE 9 */
+  -o-transition: all 0.25s;
+  /* Opera */
+  transition: all 0.25s;
+  font-family: 'National';
+  color: #F8FAFF;
+  opacity: 0.8; }
+  a:hover {
+    text-decoration: none;
+    color: #F8FAFF;
+    opacity: 1; }

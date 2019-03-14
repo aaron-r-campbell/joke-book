@@ -1,8 +1,4 @@
-$text-color: #F8FAFF;
-$xs: 480px;
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
+@import "variables";
 
 html, body {
 	height: 100%;
@@ -16,6 +12,10 @@ html, body {
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+#joke-container {
+	@include smooth-transition;
+}
+
 .content {
 	display: flex;
   align-items: center;
@@ -23,26 +23,14 @@ html, body {
   flex-direction: column;
 }
 
-#joke-container {
-	text-align: center;
-}
-
 #joke-title {
-	font-family: 'Domaine Display';
-	font-weight: bold;
-	font-size: 48px;
-	color: $text-color;
 	width: 80%;
 	margin: 50px auto 0;
 }
 
 #joke-text {
-	font-family: 'National';
-	font-size: 20px;
 	white-space: pre-wrap;
-	color: $text-color;
-	margin: 30px auto;
-	width: 80%;
+	/*width: 80%;*/
 	@media (min-width: $md) {
 		width: 50%;
 	}
@@ -53,4 +41,13 @@ html, body {
 	&:hover {
 		cursor: pointer;
 	}
+}
+
+.initially-hidden {
+	@include smooth-transition;
+	opacity: 0;
+}
+
+#about {
+	font-size: 14px;
 }
