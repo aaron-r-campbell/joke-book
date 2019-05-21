@@ -36,9 +36,9 @@ html, body {
     #joke-text {
       width: 60%; } }
 
-#new-joke {
+#reload {
   padding: 50px 100px; }
-  #new-joke:hover {
+  #reload:hover {
     cursor: pointer; }
 
 .initially-hidden {
