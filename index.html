@@ -7,14 +7,14 @@ layout: default
 		<h1 id="joke-title"></h1>
 		<p id="joke-text"></p>
 	</div>
-	<a id="reload" class="initially-hidden" style="z-index: 1000;">{% include reload.html %}</a>
+	<a id="reload" class="initially-hidden">{% include reload.html %}</a>
 </div>
 
 <div class="gear" onclick="gear()"></div>
 
 	<div class="options">
 		<div class="close" onclick="options()"></div>
-		<p class="initially-hidden" style="margin-bottom: 5px; margin-top: 5px; font-size: 32px;">Options:</p>
+		<p class="initially-hidden, menu-text">Options:</p>
 		<p>
 		<span class="text1">Swear</span>
 		<label class="switch">

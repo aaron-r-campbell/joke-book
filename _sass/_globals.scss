@@ -107,6 +107,13 @@ html, body {
 	&:hover {
 		cursor: pointer;
 	}
+	z-index: 1001;
+}
+
+.menu-text {
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-size: 32px;
 }
 
 .initially-hidden {
