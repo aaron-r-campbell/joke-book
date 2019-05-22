@@ -8,16 +8,10 @@ const sheety_link = "https://api.sheety.co/0a81bcbb-d20f-4f5f-83f6-403ffd7e4b59"
 var items;
 var items_backup; // will stay untouched while items is being edited
 var current_index;
-var nsfw;
-var swear;
-var ist;
-var dark;
-
-// Theoritically sets all initial variables to false but more realistically will just break everything (edit: it works!!! somehow...)
-if(nsfw === undefined) {nsfw = false}
-if(dark === undefined) {dark = false}
-if(swear === undefined) {swear = false}
-if(ist === undefined) {ist = false}
+var nsfw = false;
+var swear = false;
+var ist = false;
+var dark = false;
 
 // This works, the other one didnt, idk...
 function toggleSwear() {
@@ -42,13 +36,14 @@ function getNew() {
 	// Get a random index for a joke
 	var new_index = Math.floor(Math.random() * items.length);
 	// Get the joke from the items array
-
 	var newItem = items[new_index];
+	// Remove the joke we just got (since we have newItem now)
+	items.splice(new_index, 1); // 1 is the number of elements to remove
 
 	// I flipped the order because then the things can start as false (I think, idk but now it works)
 	if (newItem.dark && !dark || newItem.nsfw && !nsfw || newItem.swear && !swear || newItem.ist && !ist) {
 		getNew()
-	} else{
+	} else {
 		// Update the HTMl with what we have
 		$('#joke-title').text(newItem.title);
 		$('#joke-text').text(newItem.joke);
@@ -63,15 +58,10 @@ function getNew() {
 		// console.log("var ist: " + ist)
 		// console.log("var nsfw: " + nsfw)
 		// console.log("var swear: " + swear)
-		// console.log(" ")
-		// console.log(" ")
+
 		// Scroll to the top
 		scroll.animateScroll(0);
 	}
-
-
-	// Remove the joke we just got
-	items.splice(new_index, 1); // 1 is the number of elements to remove
 }
 
 jQuery(window).on("load", function(){
@@ -93,10 +83,11 @@ $('#reload').on("click",function(){
 })
 
 $("body").keydown(function(e) {
-	// Get a new joke anytime a key is pressed
-	getNew()
-	// 32 is spacebar. We don't want the page to scroll down when pressing the spaceba
+	if(e.keyCode == 39) {
+		getNew()
+	}
 	if (e.which == 32) {
+		getNew()
 	    return false;
 	}
 });
