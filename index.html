@@ -1,50 +1,48 @@
 ---
 layout: default
 ---
+<div class="gear initially-hidden" onclick="gear()"></div>
 
 <div class="content">
 	<div id="joke-container">
 		<h1 id="joke-title"></h1>
 		<p id="joke-text"></p>
 	</div>
-	<a id="reload" class="initially-hidden" style="z-index: 1000;">{% include reload.html %}</a>
+	<a id="reload" class="initially-hidden">{% include reload.html %}</a>
 </div>
 
-<div class="gear" onclick="gear()"></div>
+<div class="options">
+	<div class="close" onclick="options()"></div>
+	<p class="options-title">Options:</p>
+	<p>
+	<span class="toggle-label">Swear</span>
+	<label class="switch">
+	  <input onclick="toggleSwear()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">Targeted</span>
+	<label class="switch">
+	  <input onclick="toggleIst()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">NSFW</span>
+	<label class="switch">
+	  <input onclick="toggleNsfw()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">Dark</span>
+	<label class="switch">
+	  <input onclick="toggleDark()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+</div>
+<div class="overlay" onclick="options()"></div>
 
-	<div class="options">
-		<div class="close" onclick="options()"></div>
-		<p class="initially-hidden" style="margin-bottom: 5px; margin-top: 5px; font-size: 32px;">Options:</p>
-		<p>
-		<span class="text1">Swear</span>
-		<label class="switch">
-		  <input onclick="toggleSwear()" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-		</p>
-		<p>
-		<span class="text1">Targeted</span>
-		<label class="switch">
-		  <input onclick="toggleIst()" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-		</p>
-		<p>
-		<span class="text1">NSFW</span>
-		<label class="switch">
-		  <input onclick="toggleNsfw()" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-		</p>
-		<p>
-		<span class="text1">Dark</span>
-		<label class="switch">
-		  <input onclick="toggleDark()" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-		</p>
-		<p class="initially-hidden"></p>
-	</div>
-	<div class="overlay" onclick="options()"></div>
-
-	<p class="initially-hidden" id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View the <a href="https://github.com/oliviachang29/jokes" target="_">Github repo</a>.</p>
+<p class="initially-hidden" id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View the <a href="https://github.com/oliviachang29/jokes" target="_">Github repo</a>.</p>

@@ -26,12 +26,14 @@
 </head>
 
 	<body>
-		<div class="content">
+		<div class="gear initially-hidden" onclick="gear()"></div>
+
+<div class="content">
 	<div id="joke-container">
 		<h1 id="joke-title"></h1>
 		<p id="joke-text"></p>
 	</div>
-	<a id="reload" class="initially-hidden" style="z-index: 1000;"><svg width="24px" height="21px" opacity="0.5" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<a id="reload" class="initially-hidden"><svg width="24px" height="21px" opacity="0.5" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="iconmonstr-refresh-2" fill="#FAF9F9">
             <path d="M13.5,0 C7.871,0 3.288,4.436 3.025,10 L4.4408921e-16,10 L4.537,15.917 L9,10 L6.025,10 C6.285,6.098 9.533,3 13.5,3 C17.636,3 21,6.364 21,10.5 C21,14.636 17.636,18 13.5,18 C11.119,18 8.998,16.881 7.624,15.146 L5.777,17.595 C7.696,19.683 10.441,21 13.5,21 C19.298,21 24,16.298 24,10.5 C24,4.702 19.298,0 13.5,0 Z" id="Path"></path>
@@ -41,44 +43,41 @@
 </a>
 </div>
 
-<div class="gear" onclick="gear()"></div>
+<div class="options">
+	<div class="close" onclick="options()"></div>
+	<p class="options-title">Options:</p>
+	<p>
+	<span class="toggle-label">Swear</span>
+	<label class="switch">
+	  <input onclick="toggleSwear()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">Targeted</span>
+	<label class="switch">
+	  <input onclick="toggleIst()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">NSFW</span>
+	<label class="switch">
+	  <input onclick="toggleNsfw()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">Dark</span>
+	<label class="switch">
+	  <input onclick="toggleDark()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+</div>
+<div class="overlay" onclick="options()"></div>
 
-	<div class="options">
-		<div class="close" onclick="options()"></div>
-		<p class="initially-hidden" style="margin-bottom: 5px; margin-top: 5px; font-size: 32px;">Options:</p>
-		<p>
-		<span class="text1">Swear</span>
-		<label class="switch">
-		  <input onclick="toggleSwear()" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-		</p>
-		<p>
-		<span class="text1">Targeted</span>
-		<label class="switch">
-		  <input onclick="toggleIst()" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-		</p>
-		<p>
-		<span class="text1">NSFW</span>
-		<label class="switch">
-		  <input onclick="toggleNsfw()" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-		</p>
-		<p>
-		<span class="text1">Dark</span>
-		<label class="switch">
-		  <input onclick="toggleDark()" type="checkbox">
-		  <span class="slider round"></span>
-		</label>
-		</p>
-		<p class="initially-hidden"></p>
-	</div>
-	<div class="overlay" onclick="options()"></div>
-
-	<p class="initially-hidden" id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View the <a href="https://github.com/oliviachang29/jokes" target="_">Github repo</a>.</p>
+<p class="initially-hidden" id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View the <a href="https://github.com/oliviachang29/jokes" target="_">Github repo</a>.</p>
 
 	</body>
 	<script src="/assets/js/jquery.min.js" type="text/javascript"></script>

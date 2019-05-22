@@ -28,18 +28,27 @@ html, body {
   }
 }
 
-.text1 {
+.options-title {
+  font-family: Domaine Display;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 32px;
+}
+
+.toggle-label {
+  font-family: National;
 	font-size: 20px;
 	color: $text-color;
-	padding-left: 20px;
+	margin-right: 10px;
 }
 
 .gear {
 		position: absolute;
     top: 25px;
     right: 25px;
-		width: 50px;
-		height: 50px;
+		width: 30px;
+		height: 30px;
+    cursor: pointer;
     background-size: 100px 100px;
 		background-color: $text-color;
     -webkit-mask-image: url(/assets/images/gear.svg);
@@ -104,6 +113,7 @@ html, body {
 
 #reload {
 	padding: 50px 100px;
+  z-index: 1000;
 	&:hover {
 		cursor: pointer;
 	}
