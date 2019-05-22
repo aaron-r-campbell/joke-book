@@ -38,12 +38,13 @@ html, body {
 		position: absolute;
     top: 25px;
     right: 25px;
-		width: 50px;
-		height: 50px;
+		max-width: 50px;
+		max-height: 50px;
+		min-width: 24px;
+		min-height: 24px;
+		width: 5%;
+		height: 5%;
     background-size: 100px 100px;
-		background-color: $text-color;
-    -webkit-mask-image: url(/assets/images/gear.svg);
-    mask-image: url(/assets/images/gear.svg);
 		opacity: 0.5;
 		z-index: 1001;
 }
@@ -103,11 +104,18 @@ html, body {
 }
 
 #reload {
-	padding: 50px 100px;
+	padding-top: 50px 100px;
+	margin-left: math(-vw/2);
 	&:hover {
 		cursor: pointer;
 	}
 	z-index: 1001;
+	max-width: 50px;
+	max-height: 50px;
+	min-width: 24px;
+	min-height: 24px;
+	width: 5%;
+	height: 5%;
 }
 
 .menu-text {
@@ -122,10 +130,10 @@ html, body {
 }
 
 #about {
+	padding-top: 50px 100px;
+	padding-bottom: 25px;
 	font-size: 14px;
 	width: 100%;
-  text-align: center;
-	margin: auto;
   text-align: center;
 }
 
