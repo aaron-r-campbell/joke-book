@@ -26,12 +26,18 @@
 </head>
 
 	<body>
-		<div class="content">
+		<div class="gear initially-hidden" onclick="gear()"></div>
+
+<div class="content">
 	<div id="joke-container">
 		<h1 id="joke-title"></h1>
 		<p id="joke-text"></p>
 	</div>
+<<<<<<< HEAD
 	<div id="reload" class="initially-hidden"><svg width="100%" height="100%" opacity="0.5" viewBox="0 0 99.8 99.8" version="1.1" xmlns="http://www.w3.org/2000/svg">
+=======
+	<a id="reload" class="initially-hidden"><svg width="24px" height="21px" opacity="0.5" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+>>>>>>> af614a13ed37450294012787ef53cc2739a3b89a
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="gear" fill="#FAF9F9">
             <path d="M50.7,10.9c-20.9,0-37.9,16.5-38.9,37.1H0.5L17.4,70L34,48H22.9c1-14.4,13-26,27.7-26c15.3,0,27.8,12.5,27.8,27.8
@@ -42,6 +48,7 @@
 </div>
 </div>
 
+<<<<<<< HEAD
 <div class="gear" onclick="gear()"><svg width="100%" height="100%" opacity="0.5" viewBox="0 0 99.83 99.83" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="gear" fill="#FAF9F9">
@@ -85,8 +92,43 @@
 		<p class="initially-hidden"></p>
 	</div>
 	<div class="overlay" onclick="options()"></div>
+=======
+<div class="options">
+	<div class="close" onclick="options()"></div>
+	<p class="options-title">Options:</p>
+	<p>
+	<span class="toggle-label">Swear</span>
+	<label class="switch">
+	  <input onclick="toggleSwear()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">Targeted</span>
+	<label class="switch">
+	  <input onclick="toggleIst()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">NSFW</span>
+	<label class="switch">
+	  <input onclick="toggleNsfw()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+	<p>
+	<span class="toggle-label">Dark</span>
+	<label class="switch">
+	  <input onclick="toggleDark()" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+	</p>
+</div>
+<div class="overlay" onclick="options()"></div>
+>>>>>>> af614a13ed37450294012787ef53cc2739a3b89a
 
-	<p class="initially-hidden" id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View the <a href="https://github.com/oliviachang29/jokes" target="_">Github repo</a>.</p>
+<p class="initially-hidden" id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View the <a href="https://github.com/oliviachang29/jokes" target="_">Github repo</a>.</p>
 
 	</body>
 	<script src="/assets/js/jquery.min.js" type="text/javascript"></script>
