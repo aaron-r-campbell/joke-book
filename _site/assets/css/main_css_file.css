@@ -29,6 +29,7 @@ html, body {
   @media (min-width: 768px) {
     .content {
       width: 60%; } }
+<<<<<<< HEAD
 
 .text1 {
   font-size: 20px;
@@ -83,6 +84,8 @@ html, body {
   z-index: 2;
   background-color: #1c1c1c;
   -webkit-transition: all .2s; }
+=======
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 
 .link {
   color: #80FFE8;
@@ -90,8 +93,12 @@ html, body {
   z-index: 1001; }
 
 #joke-title {
+<<<<<<< HEAD
   margin: 50px auto 0;
   padding-bottom: 20px; }
+=======
+  margin: 50px auto 0; }
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 
 #joke-text {
   white-space: pre-wrap; }
@@ -115,11 +122,16 @@ html, body {
 
 #about {
   font-size: 14px;
+<<<<<<< HEAD
   width: 100%;
   text-align: center;
   position: fixed;
   bottom: 20px;
   margin: auto; }
+=======
+  width: 80%;
+  text-align: center; }
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 
 /* The switch - the box around the slider */
 .switch {

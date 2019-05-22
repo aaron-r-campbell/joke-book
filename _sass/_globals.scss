@@ -21,11 +21,16 @@ html, body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+<<<<<<< HEAD
 	width: 80%;
+=======
+  width: 80%;
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
   margin: 0 auto;
   @media (min-width: $md) {
     width: 60%;
   }
+<<<<<<< HEAD
 }
 
 .text1 {
@@ -85,6 +90,8 @@ html, body {
     z-index: 2;
     background-color: #1c1c1c;
     -webkit-transition: all .2s;
+=======
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 }
 
 .link {
@@ -116,11 +123,16 @@ html, body {
 
 #about {
 	font-size: 14px;
+<<<<<<< HEAD
 	width: 100%;
   text-align: center;
 	position: fixed;
 	bottom: 20px;
 	margin: auto;
+=======
+  width: 80%;
+  text-align: center;
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 }
 
 /* The switch - the box around the slider */

@@ -55,9 +55,14 @@ function getNew() {
 	}
 	// Get a random index for a joke
 	var new_index = Math.floor(Math.random() * items.length);
+<<<<<<< HEAD
 
+=======
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 	// Get the joke from the items array
 	var newItem = items[new_index];
+	// Remove the joke we just got (since we have newItem now)
+	items.splice(new_index, 1); // 1 is the number of elements to remove
 
 	// Remove the joke we just got (since we have newItem now)
 	items.splice(new_index, 1); // 1 is the number of elements to remove
@@ -79,7 +84,10 @@ function getNew() {
 		// console.log("var ist: " + ist)
 		// console.log("var nsfw: " + nsfw)
 		// console.log("var swear: " + swear)
+<<<<<<< HEAD
 		// console.log(" ")
+=======
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 
 		// Scroll to the top
 		scroll.animateScroll(0);
@@ -105,12 +113,19 @@ $('#reload').on("click",function(){
 })
 
 $("body").keydown(function(e) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 	if(e.keyCode == 39) {
 		getNew()
 	}
 	if (e.which == 32) {
 		getNew()
+<<<<<<< HEAD
 	  return false;
+=======
+	    return false;
+>>>>>>> aec03d82da74630afffca94acea28f7374c93f6b
 	}
 });
