@@ -149,6 +149,22 @@ html, body {
 	height: 5%;
 }
 
+#Back {
+	padding-top: 50px 100px;
+	margin-left: math(-vw/2);
+	&:hover {
+		cursor: pointer;
+	}
+	z-index: 1001;
+	max-width: 50px;
+	max-height: 50px;
+	min-width: 24px;
+	min-height: 24px;
+	width: 5%;
+	height: 5%;
+	display: none;
+}
+
 .initially-hidden {
 	@include smooth-transition;
 	opacity: 0;

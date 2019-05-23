@@ -7,7 +7,9 @@ const sheety_link = "https://api.sheety.co/0a81bcbb-d20f-4f5f-83f6-403ffd7e4b59"
 // And when all of the jokes are used up, we set items = items_backup
 var items;
 var items_backup; // will stay untouched while items is being edited
-var current_index;
+var items_completed = []; // for back button
+var items_completed_temp = []; // trust me on this one
+var current_index = -1;
 var nsfw = false;
 var swear = false;
 var stereotype = false;
@@ -51,8 +53,6 @@ function getNew() {
 	// Remove the joke we just got (since we have newItem now)
 	items.splice(new_index, 1); // 1 is the number of elements to remove
 
-	// Remove the joke we just got (since we have newItem now)
-	items.splice(new_index, 1); // 1 is the number of elements to remove
 
 	// I flipped the order because then the things can start as false (I think, idk but now it works)
 	if (newItem.dark && !dark || newItem.nsfw && !nsfw || newItem.swear && !swear || newItem.stereotype && !stereotype) {
@@ -61,6 +61,13 @@ function getNew() {
 		// Update the HTMl with what we have
 		$('#joke-title').text(newItem.title);
 		$('#joke-text').text(newItem.joke);
+		items_completed_temp.push(newItem);
+
+		//console.log(newItem);
+
+		// Saves completed jokes in a growing list
+		// for debugging
+		// console.log(items_completed);
 
 		// Show values in console (uncomment for debugging) (keep bottom blank logs so you can tell when new joke starts easily)
 		// console.log("sheet dark: " + newItem.dark)
@@ -75,6 +82,35 @@ function getNew() {
 
 		// Scroll to the top
 		scroll.animateScroll(0);
+	}
+}
+
+function goBack() {
+	scroll.animateScroll(0);
+
+	if (items_completed.length == 0) {
+			Back.style.display = "none";
+	} else {
+			Back.style.display = "block";
+	}
+}
+
+function update() {
+	var oldItem = items_completed.pop();
+	console.log(oldItem);
+	$('#joke-title').text(oldItem.title);
+	$('#joke-text').text(oldItem.joke);
+}
+
+function saveCurrent() {
+	var currentItem = items_completed_temp;
+	items_completed_temp = [];
+	items_completed.push(currentItem);
+
+	if (items_completed.length == 0) {
+			Back.style.display = "none";
+	} else {
+			Back.style.display = "block";
 	}
 }
 
@@ -93,14 +129,22 @@ jQuery(window).on("load", function(){
 
 // Get a new joke when they click the reload button
 $('#reload').on("click",function(){
+	saveCurrent()
 	getNew()
+})
+
+$('#back').on("click",function(){
+	goBack()
+	update()
 })
 
 $("body").keydown(function(e) {
 	if(e.keyCode == 39) {
+		saveCurrent()
 		getNew()
 	}
 	if (e.which == 32) {
+		saveCurrent()
 		getNew()
 	  return false;
 	}
