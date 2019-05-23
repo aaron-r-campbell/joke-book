@@ -43,24 +43,19 @@ html, body {
   margin-right: 10px; }
 
 .gear {
-  position: absolute;
+  position: fixed;
   top: 25px;
   right: 25px;
-<<<<<<< HEAD
   max-width: 50px;
   max-height: 50px;
   min-width: 24px;
   min-height: 24px;
   width: 5%;
   height: 5%;
-=======
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
->>>>>>> af614a13ed37450294012787ef53cc2739a3b89a
   background-size: 100px 100px;
   opacity: 0.5;
-  z-index: 1001; }
+  z-index: 1001;
+  cursor: pointer; }
 
 .options {
   width: 0;
@@ -111,7 +106,6 @@ html, body {
   white-space: pre-wrap; }
 
 #reload {
-<<<<<<< HEAD
   padding-top: 50px 100px;
   margin-left: math(-vw/2);
   z-index: 1001;
@@ -121,17 +115,8 @@ html, body {
   min-height: 24px;
   width: 5%;
   height: 5%; }
-=======
-  padding: 50px 100px;
-  z-index: 1000; }
->>>>>>> af614a13ed37450294012787ef53cc2739a3b89a
   #reload:hover {
     cursor: pointer; }
-
-.menu-text {
-  margin-bottom: 5px;
-  margin-top: 5px;
-  font-size: 32px; }
 
 .initially-hidden {
   -webkit-transition: all 0.25s;
@@ -150,11 +135,6 @@ html, body {
   padding-bottom: 25px;
   font-size: 14px;
   width: 100%;
-<<<<<<< HEAD
-=======
-  text-align: center;
-  margin: auto;
->>>>>>> af614a13ed37450294012787ef53cc2739a3b89a
   text-align: center; }
 
 /* The switch - the box around the slider */
