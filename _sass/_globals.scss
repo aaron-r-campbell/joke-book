@@ -15,6 +15,7 @@ html, body {
 #joke-container {
 	@include smooth-transition;
 	max-width: 800px;
+	width: 50vh;
 }
 
 .content {
