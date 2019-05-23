@@ -10,7 +10,7 @@ var items_backup; // will stay untouched while items is being edited
 var current_index;
 var nsfw = false;
 var swear = false;
-var ist = false;
+var stereotype = false;
 var dark = false;
 
 // This works, the other one didnt, idk...
@@ -23,8 +23,8 @@ function toggleDark() {
 function toggleNsfw() {
 	nsfw = !nsfw;
 }
-function toggleIst() {
-	ist = !ist;
+function toggleStereotype() {
+	stereotype = !stereotype;
 }
 
 function options() {
@@ -55,7 +55,7 @@ function getNew() {
 	items.splice(new_index, 1); // 1 is the number of elements to remove
 
 	// I flipped the order because then the things can start as false (I think, idk but now it works)
-	if (newItem.dark && !dark || newItem.nsfw && !nsfw || newItem.swear && !swear || newItem.ist && !ist) {
+	if (newItem.dark && !dark || newItem.nsfw && !nsfw || newItem.swear && !swear || newItem.stereotype && !stereotype) {
 		getNew()
 	} else {
 		// Update the HTMl with what we have
@@ -64,11 +64,11 @@ function getNew() {
 
 		// Show values in console (uncomment for debugging) (keep bottom blank logs so you can tell when new joke starts easily)
 		// console.log("sheet dark: " + newItem.dark)
-		// console.log("sheet ist: " + newItem.ist)
+		// console.log("sheet stereotype: " + newItem.stereotype)
 		// console.log("sheet nsfw: " + newItem.nsfw)
 		// console.log("sheet swear: " + newItem.swear)
 		// console.log("var dark: " + dark)
-		// console.log("var ist: " + ist)
+		// console.log("var stereotype: " + stereotype)
 		// console.log("var nsfw: " + nsfw)
 		// console.log("var swear: " + swear)
 		// console.log(" ")
