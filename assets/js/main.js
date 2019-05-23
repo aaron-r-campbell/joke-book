@@ -28,23 +28,13 @@ function toggleIst() {
 }
 
 function options() {
-	$('.options').css({
-				opacity: 0,
-				width: 0,
-		})
-	$('.overlay').css({
-				opacity: 0,
-		})
+	Options.style.display = "none";
+	Overlay.style.display = "none";
 }
 
 function gear() {
-	$('.options').css({
-				opacity: 1,
-				width: 336,
-		})
-	$('.overlay').css({
-				opacity: 0.25,
-		})
+		Options.style.display = "block";
+		Overlay.style.display = "block";
 }
 
 function getNew() {
