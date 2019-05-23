@@ -15,34 +15,52 @@ layout: default
 	<div class="options">
 		<div class="close" onclick="options()"></div>
 		<p class="options-title">Options:</p>
-		<p>
-		<span class="toggle-label">Swear</span>
-		<label class="switch">
-			<input onclick="toggleSwear()" type="checkbox">
-			<span class="slider round"></span>
-		</label>
-	</p>
-	<p>
-		<span class="toggle-label">Targeted</span>
-		<label class="switch">
-			<input onclick="toggleIst()" type="checkbox">
-			<span class="slider round"></span>
-		</label>
-	</p>
-	<p>
-		<span class="toggle-label">NSFW</span>
-		<label class="switch">
-			<input onclick="toggleNsfw()" type="checkbox">
-			<span class="slider round"></span>
-		</label>
-	</p>
-	<p>
-		<span class="toggle-label">Dark</span>
-		<label class="switch">
-			<input onclick="toggleDark()" type="checkbox">
-			<span class="slider round"></span>
-		</label>
-	</p>
-</div>
+		<table class="table">
+			<tr>
+					<td class="tdr">
+						<span class="toggle-label">Swear</span>
+					</td>
+					<td>
+						<label class="switch">
+							<input onclick="toggleSwear()" type="checkbox">
+							<span class="slider round"></span>
+						</label>
+					</td>
+			</tr>
+			<tr>
+					<td class="tdr">
+						<span class="toggle-label">Targeted</span>
+					</td>
+					<td>
+						<label class="switch">
+							<input onclick="togglIst()" type="checkbox">
+							<span class="slider round"></span>
+						</label>
+					</td>
+			</tr>
+			<tr>
+					<td class="tdr">
+						<span class="toggle-label">NSFW</span>
+					</td>
+					<td>
+						<label class="switch">
+							<input onclick="toggleNsfw()" type="checkbox">
+							<span class="slider round"></span>
+						</label>
+					</td>
+			</tr>
+			<tr>
+					<td class="tdr">
+						<span class="toggle-label">Dark</span>
+					</td>
+					<td>
+						<label class="switch">
+							<input onclick="toggleDark()" type="checkbox">
+							<span class="slider round"></span>
+						</label>
+					</td>
+			</tr>
+		</table>
+	</div>
 <div class="overlay" onclick="options()"></div>
 <p class="initially-hidden" id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View the <a href="https://github.com/oliviachang29/jokes" target="_">Github repo</a>.</p>
