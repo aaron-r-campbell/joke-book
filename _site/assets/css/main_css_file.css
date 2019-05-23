@@ -17,7 +17,8 @@ html, body {
   /* IE 9 */
   -o-transition: all 0.25s;
   /* Opera */
-  transition: all 0.25s; }
+  transition: all 0.25s;
+  max-width: 800px; }
 
 .content {
   display: flex;
@@ -106,11 +107,19 @@ html, body {
 
 #joke-title {
   margin: 50px auto 0;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  font-size: 9.8vh; }
 
 #joke-text {
-  white-space: pre-wrap; }
+  white-space: pre-wrap;
+  font-size: 4vh; }
 
+@media screen and (min-height: 500px) {
+  #joke-title {
+    font-size: 48px; }
+
+  #joke-text {
+    font-size: 20px; } }
 #reload {
   padding-top: 50px 100px;
   margin-left: math(-vw/2);
