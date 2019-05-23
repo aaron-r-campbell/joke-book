@@ -31,7 +31,7 @@ html, body {
 .options-title {
   font-family: Domaine Display;
   margin-bottom: 20px;
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 32px;
 }
 
@@ -65,19 +65,22 @@ html, body {
 	z-index: 1002;
 	opacity: 0;
   background-color: $grey-color;
-	top: 20%;
 	position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.table {
+.options-table {
 	margin: 0 auto;
 }
 
 .tdr {
 	text-align: right;
+}
+
+.options-line {
+		padding: 10px;
 }
 
 .overlay {
