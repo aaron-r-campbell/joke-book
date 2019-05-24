@@ -5,9 +5,12 @@ layout: default
 <script>
 	function backToSafety() {
     // similar behavior as clicking on a link
+		var path = window.location.pathname;
+		var page = path.split("/").pop();
+		console.log( page );
 		console.log(page)
     window.location = "http://joke-book.netlify.com";
 	}
-	window.onload = backToSafety() 
+	window.onload = backToSafety()
 </script>
 </head>
