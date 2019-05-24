@@ -32,6 +32,7 @@ function toggleStereotype() {
 function options() {
 	Options.style.display = "none";
 	Overlay.style.display = "none";
+	PermalinkWindow.style.display = "none";
 }
 
 function gear() {
@@ -63,11 +64,6 @@ function getNew() {
 		$('#joke-text').text(newItem.joke);
 		// Adds current joke to temp list (dealt with later in saveCurrent())
 		items_completed_temp.push(newItem);
-
-		// Badly named code to get number of joke in items_backup
-		var thing = newItem.title
-		var index = items_backup.map(function(items_backup) { return items_backup.title; }).indexOf(thing);
-		// console.log(index);
 
 		// Show values in console (uncomment for debugging) (keep bottom blank logs so you can tell when new joke starts easily)
 		// console.log("sheet dark: " + newItem.dark)
@@ -116,6 +112,16 @@ function goBack() {
 }
 }
 
+function permalink() {
+	var currentJoke = items_completed_temp[0];
+	var jokeTitle = currentJoke.title
+	var index = items_backup.map(function(items_backup) { return items_backup.title; }).indexOf(jokeTitle);
+	$('#Link').text("http://joke-book.netlify.com/" + index);
+	$('#Link').attr('href',"http://joke-book.netlify.com/" + index);
+	PermalinkWindow.style.display = "block";
+	Overlay.style.display = "block";
+}
+
 function saveCurrent() {
 	// Get the (hopefully only) item from the temp list and sets it as the value of currentItem
 	var currentItem = items_completed_temp[0];
@@ -126,10 +132,10 @@ function saveCurrent() {
 	// Hides joke button if completed jokes list is empty
 	if (items_completed.length == 0) {
 			Back.style.display = "none";
-			ButtonSpacer.style.display = "none";
+			Permalink.style.display = "none";
 	} else {
 			Back.style.display = "block";
-			ButtonSpacer.style.display = "block";
+			Permalink.style.display = "block";
 	}
 }
 
@@ -160,6 +166,14 @@ $('#Reload').on("click",function(){
 
 $('#back').on("click",function(){
 	goBack()
+})
+
+$('#Permalink').on("click",function(){
+	permalink()
+})
+
+$('#Link').on("click",function(){
+	permalink()
 })
 
 $("body").keydown(function(e) {
