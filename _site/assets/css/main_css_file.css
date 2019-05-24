@@ -76,6 +76,10 @@ html, body {
 .tdr {
   text-align: right; }
 
+.btd {
+  width: 5vw;
+  align-items: center; }
+
 .options-line {
   padding: 10px; }
 
@@ -121,7 +125,7 @@ html, body {
 
   #joke-text {
     font-size: 20px; } }
-#reload {
+#Reload {
   padding-top: 50px 100px;
   margin-left: math(-vw/2);
   z-index: 1001;
@@ -129,9 +133,10 @@ html, body {
   max-height: 50px;
   min-width: 24px;
   min-height: 24px;
-  width: 5%;
-  height: 5%; }
-  #reload:hover {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto; }
+  #Reload:hover {
     cursor: pointer; }
 
 #Back {
@@ -142,10 +147,26 @@ html, body {
   max-height: 50px;
   min-width: 24px;
   min-height: 24px;
-  width: 5%;
-  height: 5%;
-  display: none; }
+  width: 100%;
+  height: 100%;
+  display: none;
+  margin: 0 auto; }
   #Back:hover {
+    cursor: pointer; }
+
+#ButtonSpacer {
+  padding-top: 50px 100px;
+  margin-left: math(-vw/2);
+  z-index: 1001;
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 24px;
+  min-height: 24px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  margin: 0 auto; }
+  #ButtonSpacer:hover {
     cursor: pointer; }
 
 .initially-hidden {

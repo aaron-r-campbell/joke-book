@@ -7,8 +7,19 @@ layout: default
 		<h1 id="joke-title"></h1>
 		<p id="joke-text"></p>
 	</div>
-	<div id="reload" class="initially-hidden">{% include reload.html %}</div>
-	<div id="Back" class="initially-hidden">{% include back.html %}</div>
+	<table>
+		<tr>
+			<td class="btd">
+				<div id="Back" class="initially-hidden">{% include back.html %}</div>
+			</td>
+			<td class="btd">
+				<div id="Reload" class="initially-hidden">{% include reload.html %}</div>
+			</td>
+			<td class="btd">
+				<div id="ButtonSpacer" class="initially-hidden">{% include spacer.html %}</div>
+			</td>
+		</tr>
+	</table>
 </div>
 
 <div class="gear" onclick="gear()">{% include gear.html %}</div>

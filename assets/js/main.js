@@ -61,13 +61,8 @@ function getNew() {
 		// Update the HTMl with what we have
 		$('#joke-title').text(newItem.title);
 		$('#joke-text').text(newItem.joke);
+		// Adds current joke to temp list (dealt with later in saveCurrent())
 		items_completed_temp.push(newItem);
-
-		//console.log(newItem);
-
-		// Saves completed jokes in a growing list
-		// for debugging
-		// console.log(items_completed);
 
 		// Show values in console (uncomment for debugging) (keep bottom blank logs so you can tell when new joke starts easily)
 		// console.log("sheet dark: " + newItem.dark)
@@ -86,31 +81,38 @@ function getNew() {
 }
 
 function goBack() {
-	scroll.animateScroll(0);
-
-	if (items_completed.length == 0) {
-			Back.style.display = "none";
-	} else {
-			Back.style.display = "block";
-	}
-}
-
-function update() {
+	// Sets oldItem to the last joke viewed and removes it from the list of completed jokes
 	var oldItem = items_completed.pop();
-	console.log(oldItem);
+	// Updates page text to last joke
 	$('#joke-title').text(oldItem.title);
 	$('#joke-text').text(oldItem.joke);
+	// Scrolls to the top of the page
+	scroll.animateScroll(0);
+
+	// Hides back button if completed jokes list is empty
+	if (items_completed.length == 0 || items_completed[0] == oldItem) {
+			Back.style.display = "none";
+			ButtonSpacer.style.display = "none";
+} else {
+			Back.style.display = "block";
+			ButtonSpacer.style.display = "block"; 
+}
 }
 
 function saveCurrent() {
-	var currentItem = items_completed_temp;
+	// Get the (hopefully only) item from the temp list and sets it as the value of currentItem
+	var currentItem = items_completed_temp[0];
+	// Clears the temp list
 	items_completed_temp = [];
+	// Adds currentItem to the completed jokes list (keeps track of joke history)
 	items_completed.push(currentItem);
-
+	// Hides joke button if completed jokes list is empty
 	if (items_completed.length == 0) {
 			Back.style.display = "none";
+			ButtonSpacer.style.display = "none";
 	} else {
 			Back.style.display = "block";
+			ButtonSpacer.style.display = "block";
 	}
 }
 
@@ -128,14 +130,13 @@ jQuery(window).on("load", function(){
 });
 
 // Get a new joke when they click the reload button
-$('#reload').on("click",function(){
+$('#Reload').on("click",function(){
 	saveCurrent()
 	getNew()
 })
 
 $('#back').on("click",function(){
 	goBack()
-	update()
 })
 
 $("body").keydown(function(e) {
