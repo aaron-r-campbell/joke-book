@@ -64,6 +64,11 @@ function getNew() {
 		// Adds current joke to temp list (dealt with later in saveCurrent())
 		items_completed_temp.push(newItem);
 
+		// Badly named code to get number of joke in items_backup
+		var thing = newItem.title
+		var index = items_backup.map(function(items_backup) { return items_backup.title; }).indexOf(thing);
+		// console.log(index);
+
 		// Show values in console (uncomment for debugging) (keep bottom blank logs so you can tell when new joke starts easily)
 		// console.log("sheet dark: " + newItem.dark)
 		// console.log("sheet stereotype: " + newItem.stereotype)
@@ -95,7 +100,7 @@ function goBack() {
 			ButtonSpacer.style.display = "none";
 } else {
 			Back.style.display = "block";
-			ButtonSpacer.style.display = "block"; 
+			ButtonSpacer.style.display = "block";
 }
 }
 
