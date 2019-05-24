@@ -67,7 +67,7 @@ function getNew() {
 		// Badly named code to get number of joke in items_backup
 		var thing = newItem.title
 		var index = items_backup.map(function(items_backup) { return items_backup.title; }).indexOf(thing);
-		console.log(index);
+		// console.log(index);
 
 		// Show values in console (uncomment for debugging) (keep bottom blank logs so you can tell when new joke starts easily)
 		// console.log("sheet dark: " + newItem.dark)
