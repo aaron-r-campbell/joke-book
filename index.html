@@ -25,7 +25,7 @@ layout: default
 <div class="gear" onclick="gear()">{% include gear.html %}</div>
 
 	<div class="options" id="Options">
-		<div class="close" onclick="options()"></div>
+		<div class="close" onclick="options()">{% include close.html %}</div>
 		<p class="options-title">Options:</p>
 		<table class="options-table">
 			<tr class="options-row">
@@ -76,7 +76,7 @@ layout: default
 	</div>
 
 	<div id="PermalinkWindow">
-		<div class="close" onclick="options()"></div>
+		<div class="close" onclick="options()">{% include close.html %}</div>
 		<p class="options-title">Permalink:</p>
 		<a class="permalink" id="Link"></a>
 	</div>

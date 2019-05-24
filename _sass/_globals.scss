@@ -103,14 +103,13 @@ html, body {
 .close {
     width: 24px;
     height: 24px;
-    opacity: .6;
     position: absolute;
     top: 0px;
     right: 0px;
-    background-image: url(/assets/images/close.png);
     z-index: 2;
     background-color: #1c1c1c;
     -webkit-transition: all .2s;
+		opacity: 1;
 }
 
 .link {
