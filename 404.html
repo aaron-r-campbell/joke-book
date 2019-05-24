@@ -8,7 +8,7 @@ layout: default
 		var path = window.location.pathname;
 		var page = path.split("/").pop();
 		console.log(page);
-		sessionStorage.setItem("appendName",page);
+		sessionStorage.setItem("appendText",page);
     window.location = "http://joke-book.netlify.com";
 	}
 	window.onload = backToSafety()

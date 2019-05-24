@@ -85,6 +85,23 @@ function getNew() {
 	}
 }
 
+function getSpecific() {
+	var appendText = sessionStorage.getItem("appendText");
+
+	if (isNaN(appendText)) {
+		var newItem = items[appendText];
+		// Remove the joke we just got (since we have newItem now)
+		items.splice(new_index, 1); // 1 is the number of elements to remove
+		$('#joke-title').text(newItem.title);
+		$('#joke-text').text(newItem.joke);
+		// Adds current joke to temp list (dealt with later in saveCurrent())
+		items_completed_temp.push(newItem);
+		scroll.animateScroll(0);
+	} else {
+    window.location = "http://joke-book.netlify.com";
+	}
+}
+
 function goBack() {
 	// Sets oldItem to the last joke viewed and removes it from the list of completed jokes
 	var oldItem = items_completed.pop();
@@ -126,9 +143,12 @@ jQuery(window).on("load", function(){
     $.getJSON(sheety_link, function(data) {
 			items = data.slice();
 			items_backup = data.slice();
-	 		var appendName = sessionStorage.getItem("appendName");
-			console.log(appendName);
-			getNew()
+	 		var appendText = sessionStorage.getItem("appendText");
+			if (appendText !== null) {
+				getSpecific();
+			} else {
+				getNew();
+			}
 			// Show the stuff which is initially hidden
 			$('.initially-hidden').css({
 		        opacity: 1,
