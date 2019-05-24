@@ -126,6 +126,8 @@ jQuery(window).on("load", function(){
     $.getJSON(sheety_link, function(data) {
 			items = data.slice();
 			items_backup = data.slice();
+	 		var appendName = sessionStorage.getItem("appendName");
+			console.log(appendName);
 			getNew()
 			// Show the stuff which is initially hidden
 			$('.initially-hidden').css({
