@@ -141,6 +141,7 @@ jQuery(window).on("load", function(){
 			items = data.slice();
 			items_backup = data.slice();
 	 		var appendText = sessionStorage.getItem("appendText");
+			console.log(appendText);
 			if (appendText && null || isNAN(appendText)) {
 				getNew();
 			} else {
