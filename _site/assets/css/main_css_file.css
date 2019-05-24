@@ -64,7 +64,7 @@ html, body {
   max-height: 570px;
   display: none;
   z-index: 1002;
-  background-color: rgba(80, 75, 70, 0.97);
+  background-color: #504b46;
   position: fixed;
   top: 40%;
   left: 50%;
@@ -181,7 +181,7 @@ html, body {
   max-height: 570px;
   display: none;
   z-index: 1002;
-  background-color: rgba(80, 75, 70, 0.97);
+  background-color: #504b46;
   position: fixed;
   top: 40%;
   left: 50%;
@@ -243,7 +243,7 @@ html, body {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: rgba(80, 75, 70, 0.97);
+  background-color: #504b46;
   -webkit-transition: .4s;
   transition: .4s; }
 
