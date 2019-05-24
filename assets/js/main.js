@@ -87,11 +87,9 @@ function getNew() {
 
 function getSpecific() {
 	var appendText = sessionStorage.getItem("appendText");
-	console.log(appendText);
 	var newItem = items[appendText];
-	console.log(newItem);
 	// Remove the joke we just got (since we have newItem now)
-	items.splice(new_index, 1); // 1 is the number of elements to remove
+	items.splice(appendText, 1); // 1 is the number of elements to remove
 	$('#joke-title').text(newItem.title);
 	$('#joke-text').text(newItem.joke);
 	// Adds current joke to temp list (dealt with later in saveCurrent())
@@ -141,7 +139,6 @@ jQuery(window).on("load", function(){
 			items = data.slice();
 			items_backup = data.slice();
 	 		var appendText = sessionStorage.getItem("appendText");
-			console.log(appendText);
 			if (appendText && null || isNaN(appendText)) {
 				getNew();
 			} else {
