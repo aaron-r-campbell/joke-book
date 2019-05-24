@@ -67,7 +67,7 @@ function getNew() {
 		// Badly named code to get number of joke in items_backup
 		var thing = newItem.title
 		var index = items_backup.map(function(items_backup) { return items_backup.title; }).indexOf(thing);
-		console.log(index);
+		// console.log(index);
 
 		// Show values in console (uncomment for debugging) (keep bottom blank logs so you can tell when new joke starts easily)
 		// console.log("sheet dark: " + newItem.dark)
@@ -83,6 +83,18 @@ function getNew() {
 		// Scroll to the top
 		scroll.animateScroll(0);
 	}
+}
+
+function getSpecific() {
+	var appendText = sessionStorage.getItem("appendText");
+	var newItem = items[appendText];
+	// Remove the joke we just got (since we have newItem now)
+	items.splice(appendText, 1); // 1 is the number of elements to remove
+	$('#joke-title').text(newItem.title);
+	$('#joke-text').text(newItem.joke);
+	// Adds current joke to temp list (dealt with later in saveCurrent())
+	items_completed_temp.push(newItem);
+	scroll.animateScroll(0);
 }
 
 function goBack() {
@@ -126,7 +138,13 @@ jQuery(window).on("load", function(){
     $.getJSON(sheety_link, function(data) {
 			items = data.slice();
 			items_backup = data.slice();
-			getNew()
+	 		var appendText = sessionStorage.getItem("appendText");
+			console.log(appendText);
+			if (appendText == null || isNaN(appendText)) {
+				getNew();
+			} else {
+				getSpecific();
+			}
 			// Show the stuff which is initially hidden
 			$('.initially-hidden').css({
 		        opacity: 1,
