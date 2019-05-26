@@ -14,14 +14,13 @@ html, body {
 
 #joke-container {
 	@include smooth-transition;
-	max-width: 800px;
+	max-width: 600px;
 	width: 75vw;
 }
 
 .content {
 	display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 	width: 80%;
   margin: 0 auto;
@@ -70,6 +69,36 @@ html, body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#Splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: 1002;
+  background-color: $background-color;
+  top: 0;
+  left: 0;
+}
+
+#splashText {
+	white-space: pre-wrap;
+	font-size: 4vh;
+	opacity: 0;
+	position: relative;
+	top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.splashIcon {
+	max-width: 15vh;
+	position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	opacity: 0;
 }
 
 .options-table {
@@ -131,7 +160,8 @@ html, body {
 
 #joke-text {
 	white-space: pre-wrap;
-	font-size: 4vh;
+	font-size: 4vw;
+	text-align: left;
 }
 
 @media screen and (min-height: 500px) {
@@ -139,7 +169,7 @@ html, body {
      font-size: 48px;
   }
 	#joke-text {
-		font-size: 20px;
+		font-size: 30px;
 	}
 	.btd {
 		width: 75px;
@@ -221,7 +251,7 @@ html, body {
 	font-size: 14px;
 	width: 100%;
   text-align: center;
-	max-width: 800px;
+	max-width: 600px;
 	width: 75vw;
 }
 

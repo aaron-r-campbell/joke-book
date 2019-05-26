@@ -95,6 +95,7 @@ function getSpecific() {
 	// Adds current joke to temp list (dealt with later in saveCurrent())
 	items_completed_temp.push(newItem);
 	scroll.animateScroll(0);
+	appendText = null;
 }
 
 function goBack() {
@@ -155,12 +156,31 @@ jQuery(window).on("load", function(){
 			} else {
 				getSpecific();
 			}
+
+
+			showSplash();
 			// Show the stuff which is initially hidden
 			$('.initially-hidden').css({
 		        opacity: 1,
 		    })
 		})
 });
+
+function showSplash() {
+	$(".splashIcon").fadeTo(600,1);
+	$("#splashText").fadeTo(600,0.5);
+	setTimeout(hideSplash, 2000)
+}
+
+function hideSplash() {
+	$(".splashIcon").fadeOut();
+	$("#splashText").fadeOut();
+	setTimeout(showJoke, 800);
+}
+
+function showJoke() {
+	$("#Splash").fadeOut(1000);
+}
 
 // Get a new joke when they click the reload button
 $('#Reload').on("click",function(){

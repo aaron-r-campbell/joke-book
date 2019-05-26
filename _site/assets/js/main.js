@@ -14,6 +14,7 @@ var nsfw = false;
 var swear = false;
 var stereotype = false;
 var dark = false;
+var long = true;
 
 // This works, the other one didnt, idk...
 function toggleSwear() {
@@ -27,6 +28,9 @@ function toggleNsfw() {
 }
 function toggleStereotype() {
 	stereotype = !stereotype;
+}
+function toggleLong() {
+	long = !long;
 }
 
 function options() {
@@ -56,7 +60,7 @@ function getNew() {
 
 
 	// I flipped the order because then the things can start as false (I think, idk but now it works)
-	if (newItem.dark && !dark || newItem.nsfw && !nsfw || newItem.swear && !swear || newItem.stereotype && !stereotype) {
+	if (newItem.dark && !dark || newItem.nsfw && !nsfw || newItem.swear && !swear || newItem.stereotype && !stereotype || newItem.long && !long) {
 		getNew()
 	} else {
 		// Update the HTMl with what we have
@@ -91,6 +95,7 @@ function getSpecific() {
 	// Adds current joke to temp list (dealt with later in saveCurrent())
 	items_completed_temp.push(newItem);
 	scroll.animateScroll(0);
+	appendText = null;
 }
 
 function goBack() {
@@ -151,12 +156,31 @@ jQuery(window).on("load", function(){
 			} else {
 				getSpecific();
 			}
+
+
+			showSplash();
 			// Show the stuff which is initially hidden
 			$('.initially-hidden').css({
 		        opacity: 1,
 		    })
 		})
 });
+
+function showSplash() {
+	$(".splashIcon").fadeTo(600,1);
+	$("#splashText").fadeTo(600,0.5);
+	setTimeout(hideSplash, 2000)
+}
+
+function hideSplash() {
+	$(".splashIcon").fadeOut();
+	$("#splashText").fadeOut();
+	setTimeout(showJoke, 800);
+}
+
+function showJoke() {
+	$("#Splash").fadeOut(1000);
+}
 
 // Get a new joke when they click the reload button
 $('#Reload').on("click",function(){
