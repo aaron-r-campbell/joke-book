@@ -155,7 +155,7 @@ html, body {
 #joke-title {
 	margin: 50px auto 0;
 	padding-bottom: 20px;
-	font-size: 9.8vh;
+	font-size: 9.8vw;
 }
 
 #joke-text {
@@ -165,14 +165,16 @@ html, body {
 }
 
 @media screen and (min-height: 500px) {
+	.btd {
+		width: 75px;
+	}
+}
+@media screen and (min-width: 500px) {
   #joke-title {
      font-size: 48px;
   }
 	#joke-text {
 		font-size: 30px;
-	}
-	.btd {
-		width: 75px;
 	}
 }
 
