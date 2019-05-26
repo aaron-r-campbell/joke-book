@@ -86,7 +86,7 @@ function getNew() {
 }
 
 function getSpecific() {
-	var appendText = sessionStorage.getItem("appendText");
+	var appendText = sessionStorage.getItem("appendText" - 1);
 	var newItem = items[appendText];
 	// Remove the joke we just got (since we have newItem now)
 	items.splice(appendText, 1); // 1 is the number of elements to remove
