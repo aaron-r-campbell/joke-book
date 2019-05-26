@@ -33,7 +33,7 @@ html, body {
 
 .options-title {
   font-family: Domaine Display;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 10px;
   font-size: 32px; }
 
@@ -55,11 +55,10 @@ html, body {
   height: 5%;
   background-size: 100px 100px;
   opacity: 0.5;
-  z-index: 1001;
   cursor: pointer; }
 
 .options {
-  width: 336px;
+  width: 250px;
   max-height: 570px;
   display: none;
   z-index: 1002;
@@ -67,7 +66,8 @@ html, body {
   position: fixed;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  border-radius: 20px; }
 
 #Splash {
   position: fixed;
@@ -114,7 +114,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.25;
+  opacity: 0.5;
   top: 0;
   left: 0;
   display: none; }
@@ -123,10 +123,9 @@ html, body {
   width: 24px;
   height: 24px;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 5px;
+  right: 5px;
   z-index: 2;
-  background-color: #1c1c1c;
   -webkit-transition: all .2s;
   opacity: 1; }
 
@@ -215,18 +214,6 @@ html, body {
   transform: translate(-50%, -50%);
   text-align: center;
   padding-bottom: 25px; }
-
-.initially-hidden {
-  -webkit-transition: all 0.25s;
-  /* Safari and Chrome */
-  -moz-transition: all 0.25s;
-  /* Firefox */
-  -ms-transition: all 0.25s;
-  /* IE 9 */
-  -o-transition: all 0.25s;
-  /* Opera */
-  transition: all 0.25s;
-  opacity: 0; }
 
 #about {
   padding-top: 50px 100px;

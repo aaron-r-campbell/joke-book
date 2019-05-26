@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="gear initially-hidden" onclick="gear()"></div>
+<div class="gear" onclick="gear()"></div>
 <div class="content">
 	<div id="joke-container">
 		<h1 id="joke-title"></h1>
@@ -10,13 +10,13 @@ layout: default
 	<table>
 		<tr>
 			<td class="btd">
-				<div id="Back" class="initially-hidden">{% include back.html %}</div>
+				<div id="Back" >{% include back.html %}</div>
 			</td>
 			<td class="btd">
-				<div id="Reload" class="initially-hidden">{% include reload.html %}</div>
+				<div id="Reload" >{% include reload.html %}</div>
 			</td>
 			<td class="btd">
-				<div id="Permalink" class="initially-hidden">{% include permalink.html %}</div>
+				<div id="Permalink" >{% include permalink.html %}</div>
 			</td>
 		</tr>
 	</table>
@@ -97,4 +97,4 @@ layout: default
 		<h1 id="splashText">Joke-Book</h1>
 	</div>
 <div class="overlay" id="Overlay" onclick="options()"></div>
-<p class="initially-hidden" id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View the <a href="https://github.com/oliviachang29/jokes" target="_">Github repo</a>.</p>
+<p  id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View on <a class="link" href="https://github.com/oliviachang29/jokes" target="_">Github</a>.</p>
