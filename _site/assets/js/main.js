@@ -86,8 +86,8 @@ function getNew() {
 }
 
 function getSpecific() {
-	var appendText = sessionStorage.getItem("appendText" - 1);
-	var newItem = items[appendText];
+	var appendText = sessionStorage.getItem("appendText");
+	var newItem = items[appendText - 1];
 	// Remove the joke we just got (since we have newItem now)
 	items.splice(appendText, 1); // 1 is the number of elements to remove
 	$('#joke-title').text(newItem.title);
@@ -156,8 +156,6 @@ jQuery(window).on("load", function(){
 			} else {
 				getSpecific();
 			}
-
-
 			showSplash();
 			// Show the stuff which is initially hidden
 			$('.initially-hidden').css({
@@ -169,13 +167,13 @@ jQuery(window).on("load", function(){
 function showSplash() {
 	$(".splashIcon").fadeTo(600,1);
 	$("#splashText").fadeTo(600,0.5);
-	setTimeout(hideSplash, 2000)
+	setTimeout(hideSplash, 1000)
 }
 
 function hideSplash() {
 	$(".splashIcon").fadeOut();
 	$("#splashText").fadeOut();
-	setTimeout(showJoke, 800);
+	setTimeout(showJoke, 500);
 }
 
 function showJoke() {
