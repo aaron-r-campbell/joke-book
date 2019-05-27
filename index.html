@@ -2,6 +2,7 @@
 layout: default
 ---
 <div class="gear" onclick="gear()"></div>
+
 <div class="content">
 	<div id="joke-container">
 		<h1 id="joke-title"></h1>
@@ -24,7 +25,7 @@ layout: default
 
 <div class="gear" onclick="gear()">{% include gear.html %}</div>
 
-	<div class="options" id="Options">
+<div class="options" id="Options">
 		<div class="close" onclick="options()">{% include close.html %}</div>
 		<p class="options-title">Options:</p>
 		<table class="options-table">
@@ -64,7 +65,7 @@ layout: default
 			<tr class="options-row">
 					<td class="tdr, options-line">
 						<span class="toggle-label">NSFW</span>
-					</td class="options-line">
+					</td>
 					<td class="options-line">
 						<label class="switch">
 							<input onclick="toggleNsfw()" type="checkbox">
@@ -84,17 +85,19 @@ layout: default
 					</td>
 			</tr>
 		</table>
-	</div>
+</div>
 
-	<div id="PermalinkWindow">
+<div id="PermalinkWindow">
 		<div class="close" onclick="options()">{% include close.html %}</div>
 		<p class="options-title">Permalink:</p>
 		<a class="permalink" id="Link"></a>
-	</div>
+</div>
 
-	<div id="Splash">
+<div id="Splash">
 		<div class="splashIcon">{% include splash.html %}</div>
 		<h1 id="splashText">Joke-Book</h1>
-	</div>
+</div>
+
 <div class="overlay" id="Overlay" onclick="options()"></div>
+
 <p  id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View on <a class="link" href="https://github.com/oliviachang29/jokes" target="_">Github</a>.</p>

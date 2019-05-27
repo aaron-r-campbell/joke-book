@@ -1,22 +1,26 @@
 var scroll = new SmoothScroll('a[href*="#"]');
-// Don't change this
+// Don't change this (joke list API)
 const sheety_link = "https://api.sheety.co/0a81bcbb-d20f-4f5f-83f6-403ffd7e4b59";
+
+// ------ How it all works ------
 // We don't want jokes to repeat (until there aren't any more jokes)
 // So what we do is make two arrays - both containing all of the jokes
 // As the user reloads, we take out jokes from the first array (items)
 // And when all of the jokes are used up, we set items = items_backup
-var items;
-var items_backup; // will stay untouched while items is being edited
-var items_completed = []; // for back button
-var items_completed_temp = []; // trust me on this one
-var current_index = -1;
-var nsfw = false;
-var swear = false;
-var stereotype = false;
-var dark = false;
-var long = true;
 
-// This works, the other one didnt, idk...
+// ------ Variables ------
+var items; // List of all jokes that gets smaller to avoid repeats
+var items_backup; // Will stay untouched while items is being edited
+var items_completed = []; // List of joke viewing history (no cookies so session dependant)
+var items_completed_temp = []; // Prevents history from containing current joke
+var nsfw = false; // NSFW jokes disabled by default
+var swear = false; // Jokes with language disabled by default
+var stereotype = false; // Jokes that use stereotypes disabled by default
+var dark = false; // Dark jokes disabled by default
+var long = true; // Long jokes disabled by default
+
+// ------ Functions ------
+// To toggle joke selector variables
 function toggleSwear() {
 	swear = !swear;
 }
@@ -33,18 +37,33 @@ function toggleLong() {
 	long = !long;
 }
 
-function options() {
-	Options.style.display = "none";
-	$("#Overlay").fadeTo(400,0);
-	PermalinkWindow.style.display = "none";
-	setTimeout(function(){Overlay.style.display = "none";},400)
+// Function for the back button
+function goBack() {
+	// Sets oldItem to the last joke viewed and removes it from the list of completed jokes
+	var oldItem = items_completed.pop();
+	// Updates page text to last joke
+	$('#joke-title').text(oldItem.title);
+	$('#joke-text').text(oldItem.joke);
+	// Scrolls to the top of the page
+	scroll.animateScroll(0);
+
+	// Hides back button if completed jokes list is empty
+	if (items_completed.length == 0 || items_completed[0] == oldItem) {
+			Back.style.display = "none";
+			ButtonSpacer.style.display = "none";
+} else {
+			Back.style.display = "block";
+			ButtonSpacer.style.display = "block";
+}
 }
 
+// Function to display options menu
 function gear() {
 		Options.style.display = "block";
 		$("#Overlay").fadeTo(400,0.5);
 }
 
+// Gets a random joke
 function getNew() {
 	// If we've run out of jokes
 	if (items.length == 0) {
@@ -86,6 +105,7 @@ function getNew() {
 	}
 }
 
+// Gets the joke specified by number after url (eg: https://joke-book.netlify.com/52 will return 52nd joke)
 function getSpecific() {
 	var appendText = sessionStorage.getItem("appendText");
 	var newItem = items[appendText - 1];
@@ -99,25 +119,15 @@ function getSpecific() {
 	appendText = [];
 }
 
-function goBack() {
-	// Sets oldItem to the last joke viewed and removes it from the list of completed jokes
-	var oldItem = items_completed.pop();
-	// Updates page text to last joke
-	$('#joke-title').text(oldItem.title);
-	$('#joke-text').text(oldItem.joke);
-	// Scrolls to the top of the page
-	scroll.animateScroll(0);
-
-	// Hides back button if completed jokes list is empty
-	if (items_completed.length == 0 || items_completed[0] == oldItem) {
-			Back.style.display = "none";
-			ButtonSpacer.style.display = "none";
-} else {
-			Back.style.display = "block";
-			ButtonSpacer.style.display = "block";
-}
+// Hides options window (and permalink window)
+function options() {
+	Options.style.display = "none";
+	$("#Overlay").fadeTo(400,0);
+	PermalinkWindow.style.display = "none";
+	setTimeout(function(){Overlay.style.display = "none";},400)
 }
 
+// Shows permalink window
 function permalink() {
 	var currentJoke = items_completed_temp[0];
 	var jokeTitle = currentJoke.title
@@ -128,6 +138,7 @@ function permalink() {
 	Overlay.style.display = "block";
 }
 
+// Saves the current joke (used to help build joke history variable)
 function saveCurrent() {
 	// Get the (hopefully only) item from the temp list and sets it as the value of currentItem
 	var currentItem = items_completed_temp[0];
@@ -145,13 +156,19 @@ function saveCurrent() {
 	}
 }
 
+// Triggered when the window loads
 jQuery(window).on("load", function(){
-	// Pulls from sheety
+		// Welcome Message
+		console.log("Hello! Welcome to the joke-book console.")
+		console.log("Please visit assets/js/main.js and look for console.log() scripts for debugging.")
+		console.log("Best of luck!")
+		// Pulls from sheety
     $.getJSON(sheety_link, function(data) {
 			items = data.slice();
 			items_backup = data.slice();
 	 		var appendText = sessionStorage.getItem("appendText");
-			console.log(appendText);
+			// For debugging appended text
+			// console.log(appendText);
 			if (appendText == null || isNaN(appendText)) {
 				getNew();
 			} else {
@@ -176,18 +193,17 @@ $('#Reload').on("click",function(){
 	getNew()
 })
 
+// Go back when back button pressed
 $('#back').on("click",function(){
 	goBack()
 })
 
+// Show permalink window when permalink button pressed
 $('#Permalink').on("click",function(){
 	permalink()
 })
 
-$('#Link').on("click",function(){
-	permalink()
-})
-
+// Get a new joke when space bar or arrow key is pressed
 $("body").keydown(function(e) {
 	if(e.keyCode == 39) {
 		saveCurrent()
