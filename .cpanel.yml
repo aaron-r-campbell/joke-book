@@ -1,6 +1,5 @@
 ---
 deployment:
  tasks:
- - export DEPLOYPATH=~/git/jokes
- - ~/git/jokes index.html $DEPLOYPATH
- - ~/git/jokes/_sass _global.css $DEPLOYPATH
+ - export DEPLOYPATH=/home/aaron/public_html/jokes
+    - /bin/cp * $DEPLOYPATH
