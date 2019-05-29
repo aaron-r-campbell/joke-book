@@ -2,4 +2,4 @@
 deployment:
  tasks:
  - export DEPLOYPATH=/home/jokewvmq/public_html/
-    - /bin/cp -r /home/jokewvmq/repositories/jokes $DEPLOYPATH
+ - /bin/cp -r /home/jokewvmq/repositories/jokes $DEPLOYPATH
