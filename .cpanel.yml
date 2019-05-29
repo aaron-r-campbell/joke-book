@@ -1,5 +1,5 @@
 ---
 deployment:
  tasks:
- - export DEPLOYPATH=/home/aaron/public_html/jokes
+ - export DEPLOYPATH=/home/jokewvmq/public_html/jokes
     - /bin/cp * $DEPLOYPATH
