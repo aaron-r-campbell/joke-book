@@ -9,7 +9,7 @@ layout: default
 		var page = path.split("/").pop();
 		console.log(page);
 		sessionStorage.setItem("appendText",page);
-    window.location = "http://joke-book.netlify.com";
+    window.location = "http://joke-book.com";
 	}
 	window.onload = backToSafety()
 </script>
