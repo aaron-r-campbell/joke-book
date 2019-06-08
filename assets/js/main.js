@@ -132,8 +132,8 @@ function permalink() {
 	var currentJoke = items_completed_temp[0];
 	var jokeTitle = currentJoke.title
 	var index = items_backup.map(function(items_backup) { return items_backup.title; }).indexOf(jokeTitle);
-	$('#Link').text("http://joke-book.netlify.com/" + index);
-	$('#Link').attr('href',"http://joke-book.netlify.com/" + index);
+	$('#Link').text("http://joke-book.com/" + index);
+	$('#Link').attr('href',"http://joke-book.com/" + index);
 	PermalinkWindow.style.display = "block";
 	Overlay.style.display = "block";
 }
