@@ -85,6 +85,7 @@ html, body {
 	display: none;
 	position: fixed;
 	padding-bottom: 20px;
+	width: 60%;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -192,7 +193,7 @@ html, body {
   font-family: Domaine Display;
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 32px;
+	font-size: 6vw;
 	text-align: left;
 	margin-left: 25px;
 }
@@ -219,7 +220,7 @@ html, body {
 .permalink {
 	padding: 20px;
 	color: $slide-color;
-	font-size: 24px;
+	font-size: 4vw;
 	z-index: 1001;
 }
 
@@ -227,7 +228,7 @@ html, body {
   font-family: Domaine Display;
   margin-top: 5%;
   margin-bottom: 10px;
-  font-size: 32px;
+	font-size: 6vw;
 	text-align: center;
 }
 
