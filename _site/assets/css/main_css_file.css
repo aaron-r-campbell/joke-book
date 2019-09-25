@@ -75,7 +75,7 @@ html, body {
   display: none;
   position: fixed;
   padding-bottom: 20px;
-  width: 60%;
+  width: 30%;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -169,7 +169,7 @@ html, body {
   font-family: Domaine Display;
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 6vw;
+  font-size: 32px;
   text-align: left;
   margin-left: 25px; }
 
@@ -192,14 +192,14 @@ html, body {
 .permalink {
   padding: 20px;
   color: #80FFE8;
-  font-size: 4vw;
+  font-size: 2vw;
   z-index: 1001; }
 
 .permalink-title {
   font-family: Domaine Display;
   margin-top: 5%;
   margin-bottom: 10px;
-  font-size: 6vw;
+  font-size: 3vw;
   text-align: center; }
 
 .sidenav {
