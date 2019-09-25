@@ -25,71 +25,72 @@ layout: default
 
 <div class="gear" onclick="gear()">{% include gear.html %}</div>
 
-<div class="options" id="Options">
-		<div class="close" onclick="options()">{% include close.html %}</div>
-		<p class="options-title">Options:</p>
-		<table class="options-table">
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">Long</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input checked onclick="toggleLong()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">Swear</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input onclick="toggleSwear()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">Stereotype</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input onclick="toggleStereotype()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">NSFW</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input onclick="toggleNsfw()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">Dark</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input onclick="toggleDark()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-		</table>
+<div class="sidenav" id="Settings">
+	<div class="close" onclick="settings()">{% include close.html %}</div>
+	<p class="settings-title">Settings:</p>
+	<table class="settings-table">
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">Long</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input checked onclick="toggleLong()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">Swear</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input onclick="toggleSwear()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">Stereotype</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input onclick="toggleStereotype()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">NSFW</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input onclick="toggleNsfw()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">Dark</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input onclick="toggleDark()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+	</table>
+	<p class="settings-title">Links:</p>
 </div>
 
 <div id="PermalinkWindow">
-		<div class="close" onclick="options()">{% include close.html %}</div>
-		<p class="options-title">Permalink:</p>
+		<div class="close" onclick="settings()" style="top: 5px; right: 5px;">{% include close.html %}</div>
+		<p class="permalink-title">Permalink:</p>
 		<a class="permalink" id="Link"></a>
 </div>
 
@@ -98,6 +99,6 @@ layout: default
 		<h1 id="splashText">Joke-Book</h1>
 </div>
 
-<div class="overlay" id="Overlay" onclick="options()"></div>
+<div class="overlay" id="Overlay" onclick="settings()"></div>
 
 <p  id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View on <a class="link" href="https://github.com/DaNrd/joke-book" target="_">Github</a>.</p>

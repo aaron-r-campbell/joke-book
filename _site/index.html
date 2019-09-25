@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141222761-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141222761-1');
+  </script>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
@@ -92,8 +102,8 @@
 </svg>
 </div>
 
-<div class="options" id="Options">
-		<div class="close" onclick="options()"><svg width="100%" height="100%" opacity="0.5" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<div class="sidenav" id="Settings">
+	<div class="close" onclick="settings()"><svg width="100%" height="100%" opacity="0.5" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="back" fill="#FAF9F9">
             <path d="M821.96,709.9L612.6,500.69l209.3-209.17c31.13-31.12,31.13-81.55,0-112.66c-31.13-31.1-81.61-31.1-112.71,0L499.89,388.04
@@ -104,68 +114,69 @@
     </g>
 </svg>
 </div>
-		<p class="options-title">Options:</p>
-		<table class="options-table">
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">Long</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input checked onclick="toggleLong()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">Swear</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input onclick="toggleSwear()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">Stereotype</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input onclick="toggleStereotype()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">NSFW</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input onclick="toggleNsfw()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-			<tr class="options-row">
-					<td class="tdr, options-line">
-						<span class="toggle-label">Dark</span>
-					</td>
-					<td class="options-line">
-						<label class="switch">
-							<input onclick="toggleDark()" type="checkbox">
-							<span class="slider round"></span>
-						</label>
-					</td>
-			</tr>
-		</table>
+	<p class="settings-title">Settings:</p>
+	<table class="settings-table">
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">Long</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input checked onclick="toggleLong()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">Swear</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input onclick="toggleSwear()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">Stereotype</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input onclick="toggleStereotype()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">NSFW</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input onclick="toggleNsfw()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+		<tr class="settings-row">
+				<td class="tdr, settings-line">
+					<span class="toggle-label">Dark</span>
+				</td>
+				<td class="settings-line">
+					<label class="switch">
+						<input onclick="toggleDark()" type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</td>
+		</tr>
+	</table>
+	<p class="settings-title">Links:</p>
 </div>
 
 <div id="PermalinkWindow">
-		<div class="close" onclick="options()"><svg width="100%" height="100%" opacity="0.5" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<div class="close" onclick="settings()" style="top: 5px; right: 5px;"><svg width="100%" height="100%" opacity="0.5" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="back" fill="#FAF9F9">
             <path d="M821.96,709.9L612.6,500.69l209.3-209.17c31.13-31.12,31.13-81.55,0-112.66c-31.13-31.1-81.61-31.1-112.71,0L499.89,388.04
@@ -176,7 +187,7 @@
     </g>
 </svg>
 </div>
-		<p class="options-title">Permalink:</p>
+		<p class="permalink-title">Permalink:</p>
 		<a class="permalink" id="Link"></a>
 </div>
 
@@ -258,12 +269,13 @@
 		<h1 id="splashText">Joke-Book</h1>
 </div>
 
-<div class="overlay" id="Overlay" onclick="options()"></div>
+<div class="overlay" id="Overlay" onclick="settings()"></div>
 
-<p  id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View on <a class="link" href="https://github.com/oliviachang29/jokes" target="_">Github</a>.</p>
+<p  id="about">Jokes collected from various sources. Site design by <a class="link" href="http://aaron.keydesign.com" target="_">Aaron Campbell</a> and <a class="link" href="https://oliviachang.me" target="_">Olivia Chang</a>. View on <a class="link" href="https://github.com/DaNrd/joke-book" target="_">Github</a>.</p>
 
 	</body>
 	<script src="/assets/js/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
 <script src="/assets/js/main.js"></script>
+
 </html>

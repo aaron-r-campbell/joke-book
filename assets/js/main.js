@@ -57,10 +57,10 @@ function goBack() {
 }
 }
 
-// Function to display options menu
+// Function to display settings menu
 function gear() {
-		Options.style.display = "block";
 		$("#Overlay").fadeTo(400,0.5);
+		Settings.style.width = "250px";
 }
 
 // Gets a random joke
@@ -119,12 +119,13 @@ function getSpecific() {
 	appendText = [];
 }
 
-// Hides options window (and permalink window)
-function options() {
-	Options.style.display = "none";
+// Hides settings window (and permalink window)
+function settings() {
 	$("#Overlay").fadeTo(400,0);
 	PermalinkWindow.style.display = "none";
+	$("#PermalinkWindow").fadeTo(400,0);
 	setTimeout(function(){Overlay.style.display = "none";},400)
+	Settings.style.width = "0";
 }
 
 // Shows permalink window
@@ -136,6 +137,8 @@ function permalink() {
 	$('#Link').attr('href',"http://joke-book.com/" + index);
 	PermalinkWindow.style.display = "block";
 	Overlay.style.display = "block";
+	$("#Overlay").fadeTo(400,0.5);
+	$("#PermalinkWindow").fadeTo(400,1);
 }
 
 // Saves the current joke (used to help build joke history variable)
@@ -149,10 +152,10 @@ function saveCurrent() {
 	// Hides joke button if completed jokes list is empty
 	if (items_completed.length == 0) {
 			Back.style.display = "none";
-			Permalink.style.display = "none";
+			PermalinkWindow.style.display = "none";
 	} else {
 			Back.style.display = "block";
-			Permalink.style.display = "block";
+			PermalinkWindow.style.display = "none";
 	}
 }
 
