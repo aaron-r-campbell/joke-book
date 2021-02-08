@@ -1,6 +1,6 @@
 var scroll = new SmoothScroll('a[href*="#"]');
 // Don't change this (joke list API)
-const sheety_link = "https://api.sheety.co/0a81bcbb-d20f-4f5f-83f6-403ffd7e4b59";
+const sheety_link = "https://api.sheety.co/07bd457fb0d4d4b2c5d460911ffc6b37/jokeBook/jokeList";
 
 // ------ How it all works ------
 // We don't want jokes to repeat (until there aren't any more jokes)
