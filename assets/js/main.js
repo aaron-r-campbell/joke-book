@@ -1,6 +1,6 @@
 var scroll = new SmoothScroll('a[href*="#"]');
 // Don't change this (joke list API)
-const sheety_link = "https://api.sheety.co/07bd457fb0d4d4b2c5d460911ffc6b37/jokeBook/jokeList";
+const sheety_link = "/assets/jokeList.json";
 
 // ------ How it all works ------
 // We don't want jokes to repeat (until there aren't any more jokes)
@@ -167,8 +167,9 @@ jQuery(window).on("load", function(){
 		console.log("Best of luck!")
 		// Pulls from sheety
     $.getJSON(sheety_link, function(data) {
-			items = data.slice();
-			items_backup = data.slice();
+			items = data.jokeList;
+			items_backup = data.jokeList;
+			console.log(data);
 	 		var appendText = sessionStorage.getItem("appendText");
 			// For debugging appended text
 			// console.log(appendText);
