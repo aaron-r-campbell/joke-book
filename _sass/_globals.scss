@@ -347,5 +347,7 @@ input:checked + .slider:before {
 }
 
 @media (min-width: $md) {
-	width: 60%;
+	.btd {
+		width: 60%;
+	}
 }
