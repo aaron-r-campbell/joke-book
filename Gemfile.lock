@@ -203,7 +203,7 @@ DEPENDENCIES
   ffi (>= 1.9.24)
   guard
   guard-livereload (~> 2.5)
-  jekyll (>= 4.2.0)
+  jekyll (>= 3.9.3)
   minima
 
 RUBY VERSION
