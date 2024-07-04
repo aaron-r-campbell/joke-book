@@ -49,18 +49,18 @@ function goBack() {
 
 	// Hides back button if completed jokes list is empty
 	if (items_completed.length == 0 || items_completed[0] == oldItem) {
-			Back.style.display = "none";
-			ButtonSpacer.style.display = "none";
-} else {
-			Back.style.display = "block";
-			ButtonSpacer.style.display = "block";
-}
+		Back.style.display = "none";
+		ButtonSpacer.style.display = "none";
+	} else {
+		Back.style.display = "block";
+		ButtonSpacer.style.display = "block";
+	}
 }
 
 // Function to display settings menu
 function gear() {
-		$("#Overlay").fadeTo(400,0.5);
-		Settings.style.width = "250px";
+	$("#Overlay").fadeTo(400, 0.5);
+	Settings.style.width = "250px";
 }
 
 // Gets a random joke
@@ -121,10 +121,10 @@ function getSpecific() {
 
 // Hides settings window (and permalink window)
 function settings() {
-	$("#Overlay").fadeTo(400,0);
+	$("#Overlay").fadeTo(400, 0);
 	PermalinkWindow.style.display = "none";
-	$("#PermalinkWindow").fadeTo(400,0);
-	setTimeout(function(){Overlay.style.display = "none";},400)
+	$("#PermalinkWindow").fadeTo(400, 0);
+	setTimeout(function () { Overlay.style.display = "none"; }, 400)
 	Settings.style.width = "0";
 }
 
@@ -132,13 +132,13 @@ function settings() {
 function permalink() {
 	var currentJoke = items_completed_temp[0];
 	var jokeTitle = currentJoke.title
-	var index = items_backup.map(function(items_backup) { return items_backup.title; }).indexOf(jokeTitle);
+	var index = items_backup.map(function (items_backup) { return items_backup.title; }).indexOf(jokeTitle);
 	$('#Link').text("http://joke-book.com/" + index);
-	$('#Link').attr('href',"http://joke-book.com/" + index);
+	$('#Link').attr('href', "http://joke-book.com/" + index);
 	PermalinkWindow.style.display = "block";
 	Overlay.style.display = "block";
-	$("#Overlay").fadeTo(400,0.5);
-	$("#PermalinkWindow").fadeTo(400,1);
+	$("#Overlay").fadeTo(400, 0.5);
+	$("#PermalinkWindow").fadeTo(400, 1);
 }
 
 // Saves the current joke (used to help build joke history variable)
@@ -151,71 +151,71 @@ function saveCurrent() {
 	items_completed.push(currentItem);
 	// Hides joke button if completed jokes list is empty
 	if (items_completed.length == 0) {
-			Back.style.display = "none";
-			PermalinkWindow.style.display = "none";
+		Back.style.display = "none";
+		PermalinkWindow.style.display = "none";
 	} else {
-			Back.style.display = "block";
-			PermalinkWindow.style.display = "none";
+		Back.style.display = "block";
+		PermalinkWindow.style.display = "none";
 	}
 }
 
 // Triggered when the window loads
-jQuery(window).on("load", function(){
-		// Welcome Message
-		console.log("Hello! Welcome to the joke-book console.")
-		console.log("Please visit assets/js/main.js and look for console.log() scripts for debugging.")
-		console.log("Best of luck!")
-		// Pulls from sheety
-    $.getJSON(sheety_link, function(data) {
-			items = data.jokeList;
-			items_backup = data.jokeList;
-			console.log(data);
-	 		var appendText = sessionStorage.getItem("appendText");
-			// For debugging appended text
-			// console.log(appendText);
-			if (appendText == null || isNaN(appendText)) {
-				getNew();
-			} else {
-				getSpecific();
-			}
-			// Show Splash Screen
-			$(".splashIcon").fadeTo(600,1);
-			$("#splashText").fadeTo(600,0.5);
-			setTimeout(function() {
-				$(".splashIcon").fadeOut()
-				$("#splashText").fadeOut()
-				setTimeout(function() {
-					$("#Splash").fadeOut(1000)
-				},500);
-			},1000)
-		})
+jQuery(window).on("load", function () {
+	// Welcome Message
+	console.log("Hello! Welcome to the joke-book console.")
+	console.log("Please visit assets/js/main.js and look for console.log() scripts for debugging.")
+	console.log("Best of luck!")
+	// Pulls from sheety
+	$.getJSON(sheety_link, function (data) {
+		items = data.jokeList;
+		items_backup = data.jokeList;
+		console.log(data);
+		var appendText = sessionStorage.getItem("appendText");
+		// For debugging appended text
+		// console.log(appendText);
+		if (appendText == null || isNaN(appendText)) {
+			getNew();
+		} else {
+			getSpecific();
+		}
+		// Show Splash Screen
+		$(".splashIcon").fadeTo(600, 1);
+		$("#splashText").fadeTo(600, 0.5);
+		setTimeout(function () {
+			$(".splashIcon").fadeOut()
+			$("#splashText").fadeOut()
+			setTimeout(function () {
+				$("#Splash").fadeOut(1000)
+			}, 500);
+		}, 1000)
+	})
 });
 
 // Get a new joke when they click the reload button
-$('#Reload').on("click",function(){
+$('#Reload').on("click", function () {
 	saveCurrent()
 	getNew()
 })
 
 // Go back when back button pressed
-$('#back').on("click",function(){
+$('#back').on("click", function () {
 	goBack()
 })
 
 // Show permalink window when permalink button pressed
-$('#Permalink').on("click",function(){
+$('#Permalink').on("click", function () {
 	permalink()
 })
 
 // Get a new joke when space bar or arrow key is pressed
-$("body").keydown(function(e) {
-	if(e.keyCode == 39) {
+$("body").keydown(function (e) {
+	if (e.keyCode == 39) {
 		saveCurrent()
 		getNew()
 	}
 	if (e.which == 32) {
 		saveCurrent()
 		getNew()
-	  return false;
+		return false;
 	}
 });

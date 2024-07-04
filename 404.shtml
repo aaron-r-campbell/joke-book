@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
+
 <head>
-<script>
-	function backToSafety() {
-    // similar behavior as clicking on a link
-		var path = window.location.pathname;
-		var page = path.split("/").pop();
-		console.log(page);
-		sessionStorage.setItem("appendText",page);
-    window.location = "http://joke-book.com";
-	}
-	window.onload = backToSafety()
-</script>
+	<script>
+		function backToSafety() {
+			// similar behavior as clicking on a link
+			var path = window.location.pathname;
+			var page = path.split("/").pop();
+			console.log(page);
+			sessionStorage.setItem("appendText", page);
+			window.location = "http://joke-book.com";
+		}
+		window.onload = backToSafety()
+	</script>
 </head>
