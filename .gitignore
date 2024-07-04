@@ -6,3 +6,4 @@ _site/
 vendor
 .devcontainer
 .DS_Store
+Gemfile.lock
